@@ -7,7 +7,7 @@
 
 - First of all, this is a watered-down version of this experience, because an important part of the thrill is being surrounded by menacing men playing their role, and the effort of the artists is it, to build up momentum on your nerves. And this, as the reader can most definetly understand, is not so easy to replicate on a web page app.
 
-# Front boilerplate
+## Front boilerplate
 ## Install
 
 - npm install -g parcel-bundler
@@ -16,4 +16,3 @@
 ## Use
  - npm run dev
  - npm run build
- 
