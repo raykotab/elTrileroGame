@@ -12,24 +12,28 @@
   }
 
   h1 {
-    color: #965705; font-size: 75px; line-height: 74px; font-weight: 700; margin: 0 5px 24px; float: none; padding: 10px; margin: 0 5px 24px; font-family: 'Libre Baskerville', serif; 
+    color: #965705; font-size: 60px; line-height: 60px; font-weight: 700; margin: 0 5px 0; float: none; padding: 5px; margin: 0 5px 0; font-family: 'Libre Baskerville', serif; 
   }
 
   p {
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 100;
     font-family: fantasy;
   }
 
-  img {
-    transform: rotate(180);
+  canvas {
+    border:1px solid #000000;
   }
+
+  img {
+    transform: rotate(180deg);
+  }
+
 
   #cups {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    
   }
 
   .cup {
