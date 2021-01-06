@@ -1,9 +1,9 @@
 
   html { 
     background: url('../img/ramblas.jpg') no-repeat center center fixed; 
-    -webkit-background-size: cover;
+    /* -webkit-background-size: cover;
     -moz-background-size: cover;
-    -o-background-size: cover;
+    -o-background-size: cover; */
     background-size: cover;
   }
 
@@ -12,13 +12,14 @@
   }
 
   h1 {
-    color: #965705; font-size: 60px; line-height: 60px; font-weight: 700; margin: 0 5px 0; float: none; padding: 5px; margin: 0 5px 0; font-family: 'Libre Baskerville', serif; 
+    color: #965705; font-size: 50px; line-height: 40px; font-weight: 700; margin: 0 5px 0; float: none; padding: 5px; margin: 0 5px 0; font-family: 'Libre Baskerville', serif; 
   }
 
   p {
-    font-size: 60px;
-    font-weight: 100;
+    font-size: 40px;
+    font-weight: 300;
     font-family: fantasy;
+    color: rgb(255, 2, 2);
   }
 
   canvas {

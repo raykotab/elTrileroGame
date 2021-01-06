@@ -1,6 +1,6 @@
 
 let littleBall;
-let littleBallPositions = [220, 540, 860];
+let littleBallPositions = [230, 540, 860];
 let cup1;
 let cup2;
 let cup3;
@@ -8,17 +8,17 @@ let score;
 
 function startGame() {
     
-    littleBall = new component (15, 15, "blue", 220, 230);
-    cup1 = new component (50, 70, "img/cupTrileroUpDown.png", 220, 8, "image");
-    cup3 = new component (50, 70, "img/cupTrileroUpDown.png", 540, 160, "image");
-    cup2 = new component (50, 70, "img/cupTrileroUpDown.png", 860, 160, "image");
-    score = new component ("30px", "Consolas", "black", 800, 50, "text");
+    littleBall = new component (15, 15, "red", 235, 230);
+    cup1 = new component (70, 100, "img/cupTrileroUpDown.png", 220, 160, "image");
+    cup3 = new component (70, 100, "img/cupTrileroUpDown.png", 540, 160, "image");
+    cup2 = new component (70, 100, "img/cupTrileroUpDown.png", 860, 160, "image");
+    score = new component ("30px", "Consolas", "green", 800, 50, "text");
     myGameArea.start();
-   
+    
 }
 
 let myGameArea = {
-
+    
     canvas : document.createElement("canvas"),
     start : function() {
         this.canvas.width = 1100;
@@ -31,82 +31,107 @@ let myGameArea = {
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     },
-
+    
     play : function() {
-        let sorteo=Math.round(Math.random()*(2)+1);
+        
+        let sorteo = Math.round(Math.random() * 3) + 1;
         littleBall.x = littleBallPositions[sorteo];
-        if(littleBall.x == 220) {
-
+        switch (littleBallPositions) {
+            case [0]: 
+                cup1.show();
+                break;
+                case [1]: 
+                cup2.show();
+                break;
+                case [2]:
+                    cup3.show();
+                    break;
+                    
+                }
+            },
+            
+            stop : function() {
+                clearInterval(this.interval);
+            }
         }
-    },
-
-    stop : function() {
-        clearInterval(this.interval);
-      }
-}
-
-
-
-function component(width, height, color, x, y, type) {
-
-    this.gameArea = myGameArea;
-    this.type = type;
-    if (type == "image") {
-        this.image = new Image();
-        this.image.src = color;
-    }
-    this.width = width;
-    this.height = height;
-    this.speedX = 0;
-    this.speedY = 0;
-    this.x = x;
-    this.y = y;
-    this.update = function() {
-        ctx = myGameArea.context;
+        
+        
+        
+        function component(width, height, color, x, y, type) {
+            
+            this.gameArea = myGameArea;
+            this.type = type;
+            
+            if (type == "image") {
+                this.image = new Image();
+                this.image.src = color; 
+            }
+            
+            this.width = width;
+            this.height = height;
+            this.x = x;
+            this.y = y;
+            
+            this.rotate = function () {
+                ctx = myGameArea.context;
+                if (type == "image") {
+                    ctx.rotate(45 * Math.PI / 180);
+                }
+                return;
+            }
+            
+            this.update = function() {
+                ctx = myGameArea.context;
         if (type == "image") {
             ctx.drawImage(this.image,
                 this.x,
                 this.y,
                 this.width,
                 this.height);
-        } else {
-                if (this.type == "text") {
-            ctx.font = this.width + " " + this.height;
-            ctx.fillStyle = color;
-            ctx.fillText(this.text, this.x, this.y);
             } else {
-            ctx.fillStyle = color;
-            ctx.fillRect(this.x, this.y, this.width, this.height);
+                if (this.type == "text") {
+                    ctx.font = this.width + " " + this.height;
+                    ctx.fillStyle = color;
+                    ctx.fillText(this.text, this.x, this.y);
+                } else {
+                    ctx.fillStyle = color;
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
             }
         }
-        //aqui anyadir foto?, anyadiendo argumento
-    }
-    
-    this.newPosition = function() {
-    this.x += this.speedX;
-    this.y += this.speedY;
-    }
-    
-    this.show = function () {
-        this.y = 80;
-    }
+        
+        this.moveBall = function() {
 
-}
-
-function updateGameArea() {
-    
-    
-    littleBall.speedX = 0;
-    littleBall.speedY = 0;
-    if(littleBall.x <= 220) {
-        littleBall.speedX += 15;
+                        
+            if (littleBall.x <= 235) {
+                changeDirection = false;
+            } else if (littleBall.x > 890) {
+                changeDirection = true;
+            }
+            
+            if (littleBall.x >= 235 && changeDirection == false) {
+                littleBall.x += 10;
+            } else if (changeDirection == true) {
+                littleBall.x -= 10;
+            }
+        }
+        
+        
+        this.show = function () {
+            this.y = 80;
+        }
+        
     }
-    if(littleBall.x >= 860) {
-        littleBall.speedX -= 15;
-    }
+    
+    function updateGameArea() {
+    
     myGameArea.clear();
-    littleBall.newPosition();
+    littleBall.moveBall();
     littleBall.update();
+    
+    
+    
+
     cup1.update();
     cup2.update();
     cup3.update();
@@ -114,11 +139,6 @@ function updateGameArea() {
     score.update();
 }
 
-function moveAround() {
-    
-}
-
-littleBall.moveAround();
 
 // class Cup {
 
