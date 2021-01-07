@@ -1,9 +1,7 @@
 
   html { 
     background: url('../img/ramblas.jpg') no-repeat center center fixed; 
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover; */
+    
     background-size: cover;
   }
 
@@ -21,24 +19,65 @@
     font-family: fantasy;
     color: rgb(255, 2, 2);
   }
-
-  canvas {
+  #gamePlace {
+    position: relative;
+    margin-top: 250px;
+  }
+  button {
     border:3px solid #000000;
+    height: 90px;
+    width: 70px;
+    
   }
 
-  /* img {
-    transform: rotate(180deg);
-  } */
+  img {
+    width: 100px;
+    height: 130px;
+  }
 
+  #littleBall {
+    background: rgb(255, 0, 0);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    bottom: 20px;
+    left: 23%;
+    z-index: -1;
+    position: absolute;
+    animation-duration: 8s;
+    animation-name: littleballanimation;
+    
+  }
 
   #cups {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    z-index: 0;
+  }
+  
+  .cup {
+    /* position: absolute;  */
+    z-index: 0;
+    animation-duration: 5s;
+    animation-name: cupanimation;
+    
+  } 
+
+  @keyframes cupanimation {
+    
+    0% { bottom: 0%; }
+    50% {bottom: 100%;}
+    100% {bottom: 0%;}
   }
 
-  .cup {
-    width: 100px;
-    height: 150px;
-     
+  @keyframes littleballanimation {
+    0% {right: 25%;}
+    25% {right: 50%;}
+    50% {right: 85%;}
+    75% {right:50%;}
+    100% {right: 25%;}
   }
+
+  

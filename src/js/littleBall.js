@@ -17,11 +17,11 @@ class LittleBall {
     }
 
     animation () {
-
+        console.log("animation littleBall");
     }
-    
-    disappear () {
 
+    disappear () {
+        console.log("littleBall disappeared");
     }
     
 }

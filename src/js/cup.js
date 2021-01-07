@@ -4,15 +4,13 @@ class Cup {
 
     constructor (x, isFull = undefined) {
 
-    this.isFull = isFull;
-    this.x = x;
-    this.y = 160;
+        this.x = x;
+        this.y = 160;
+        this.isFull = isFull;
     }
-    checkIfFull (cup) {
     
-    }
 
-    animation () {
-        console.log("animation");
+    animate () {
+        console.log("animation cup");
     }
 }
