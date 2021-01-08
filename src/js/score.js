@@ -1,5 +1,5 @@
 
-class Score {
+export class Score {
 
     constructor (quantity) {
 

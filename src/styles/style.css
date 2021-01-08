@@ -49,10 +49,10 @@
     width: 20px;
     height: 20px;
     bottom: 20px;
-    right: 245px;
+    
     z-index: -1;
     position: absolute;
-    
+    animation-delay: 5s;
     animation-duration: 8s;
     animation-name: littleballanimation;
     
@@ -74,7 +74,7 @@
     z-index: 0;
     animation-duration: 5s;
     animation-name: cupanimation;
-    
+    animation-play-state: unset;
   } 
 
   @keyframes cupanimation {

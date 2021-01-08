@@ -1,4 +1,8 @@
 
+import {Cup} from './cup.js';
+import {LittleBall} from './littleBall.js';
+import {Score} from './score.js';
+
 class Game {
   
   constructor () {
@@ -7,19 +11,21 @@ class Game {
     this.cup1 = new Cup(230);
     this.cup2 = new Cup(540);
     this.cup3 = new Cup(860);
-    this.score = new Score(0);
     this.littleBall = new LittleBall(230);
+    this.score = new Score(10);
     this.userClick = false;
     this.buttonCup1 = document.querySelector("#cup1").addEventListener("click", this.endGame);
     this.buttonCup2 = document.querySelector("#cup2").addEventListener("click", this.endGame);
     this.buttonCup3 = document.querySelector("#cup3").addEventListener("click", this.endGame);
-    
+
   }
   
   startGame()  {
 
-    this.littleBall.setPosition(230);
-    //this.cup1.animation();
+    
+   
+
+    this.cup1.animate();
 
     if(this.buttonCup1 == true || this.buttonCup2 == true || this.buttonCup3 == true) {
       return this.userClick = true;
@@ -36,9 +42,9 @@ class Game {
   
   endGame() {
     console.log("clicked");
-    this.score.bet();
+    //this.score.bet();
     this.littleBall.disappear();
-    //this.clickedCup.animation();
+    this.animation();
     this.score.showScore();
   }
 
@@ -81,5 +87,6 @@ class Game {
     }
   }
 }
-  game = new Game();
+
+  let game = new Game();
   game.startGame();

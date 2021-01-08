@@ -1,6 +1,5 @@
 
-
-class LittleBall {
+export class LittleBall {
 
     constructor(position) {
 
