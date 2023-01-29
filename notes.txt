@@ -1,0 +1,16 @@
+hay que escribir en main.scss)
+element.classList.add("my-class");
+element.classList.remove("my-class");
+@keyframes drawArc1 {
+    0%   { transform: rotate(180deg);  }
+    100% { transform: rotate(0deg);    }
+}
+
+@keyframes drawArc2 {
+    0%   { transform: rotate(-180deg); }
+    100% { transform: rotate(0deg);    }
+}
+
+$("#button").click(function() {
+  $('.transform').toggleClass('transform-active');
+});

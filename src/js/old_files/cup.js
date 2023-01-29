@@ -10,6 +10,7 @@ export class Cup {
         
     }
     
+
     animate () {
          console.log("copa animadaaaaa")
         //let buttonCup1 = game.buttonCup1

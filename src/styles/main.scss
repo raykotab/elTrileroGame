@@ -2,3 +2,165 @@
 @import "./general/_variables";
 @import "./components/titles";
 
+
+html { 
+    background: url('../img/ramblas.jpg') no-repeat center center fixed; 
+    background-size: cover;
+  }
+
+  * {
+    text-align: center;
+  }
+
+  h1 {
+    color: #965705; 
+    font-size: 50px; 
+    line-height: 40px; 
+    font-weight: 700;
+    margin: 0 5px 0; 
+    float: none; 
+    padding: 5px; 
+    margin: 0 5px 0; 
+    font-family: 'Libre Baskerville', serif; 
+  }
+
+  p {
+    font-size: 40px;
+    font-weight: 300;
+    font-family: fantasy;
+    color: rgb(255, 2, 2);
+  }
+
+  #gamePlace {
+    position: relative;
+    margin-top: 250px;
+  }
+
+  button {
+    border:1px solid rgba(255, 255, 255, 0.01);
+    background-color: rgba(255, 255, 255, 0.01);
+    
+  }
+
+  img {
+    width: 100px;
+    height: 130px;
+  }
+
+  #littleBall {
+    background: rgb(9, 255, 0);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    bottom: 20px;
+    z-index: -1;
+    position: absolute;
+    animation-duration: 8s;
+    animation-name: cupAroundDown;
+    transition-timing-function: ease;
+    
+  }
+
+  #cups {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    z-index: 0;
+  }
+
+  #cup1 {
+    animation-duration: 1.5s;
+    animation-name: cup1AroundDown;
+  }
+
+  #cup2 {
+    animation-duration: 1.5s;
+    animation-name: cup2AroundDownRight;
+  }
+
+  // #cup3 {
+  //   animation-duration: 1.5s;
+  //   animation-name: cup3AroundUp;
+  // }
+
+  .cupUp {
+    /* position: absolute;  */
+    z-index: 0;
+    animation-duration: 1.5s;
+    animation-name: cupUp;
+    animation-play-state: unset;
+  } 
+
+  #score {
+    height: 100px; 
+    width: 300px; 
+    border-color: chartreuse solid 5px;
+    position: relative; 
+    right: -80%; 
+    top: -10%; 
+    background-color: black; 
+    border: 5px, solid, greenyellow;
+  }
+
+  @keyframes cupUp {
+    0% {bottom: 0%;}
+    50% {bottom: 100%; transform: scale(0.7);}
+    100% {bottom: 0%;}
+  }
+
+  /////////////////////////////////////////////////////////////////////
+  
+  @keyframes cup1AroundUp {
+    0% {transform: rotate(-180deg) translateX(0px) rotate(180deg) scale(1);}
+    50% {transform: rotate(-90deg) translateX(255px) rotate(90deg) scale(0.7);}
+    100% { transform: rotate(0deg) translateX(505px) rotate(0deg) scale(1);}
+  }
+
+  @keyframes cup1AroundDown {
+    0% {transform: rotate(180deg) translateX(0px) rotate(-180deg) scale(1);}
+    50% {transform: rotate(90deg) translateX(255px) rotate(-90deg)scale(1.3);}
+    100% { transform: rotate(0deg) translateX(505px) rotate(0deg) scale(1);}
+  }
+  
+  @keyframes cup2AroundUpRight {
+    0% {transform: rotate(-180deg) translateX(0px) rotate(180deg) scale(1);}
+    50% {transform: rotate(-90deg) translateX(255px) rotate(90deg) scale(0.7);}
+    100% { transform: rotate(0deg) translateX(505px) rotate(0deg) scale(1);}
+  }
+
+  @keyframes cup2AroundDownRight {
+    0% {transform: rotate(180deg) translateX(0px) rotate(-180deg) scale(1);}
+    50% {transform: rotate(90deg) translateX(255px) rotate(-90deg) scale(1.3);}
+    100% { transform: rotate(0deg) translateX(505px) rotate(0deg) scale(1);}
+  }
+
+  @keyframes cup2AroundUpLeft {
+    0% {transform: rotate(0deg) translateX(0px) rotate(0deg) scale(1);}
+    50% {transform: rotate(-90deg) translateX(255px) rotate(90deg) scale(0.7);}
+    100% { transform: rotate(-180deg) translateX(505px) rotate(180deg) scale(1);}
+  }
+
+  @keyframes cup2AroundDownLeft {
+    0% {transform: rotate(0deg) translateX(0px) rotate(0deg) scale(1);}
+    50% {transform: rotate(90deg) translateX(255px) rotate(-90deg) scale(0.7);}
+    100% { transform: rotate(180deg) translateX(505px) rotate(-180deg) scale(1);}
+  }
+
+  @keyframes cup3AroundUp {
+    0% {transform: rotate(0deg) translateX(0px) rotate(0deg) scale(1);}
+    50% {transform: rotate(-90deg) translateX(255px) rotate(90deg) scale(0.7);}
+    100% { transform: rotate(-180deg) translateX(505px) rotate(180deg) scale(1);}
+  }
+
+  @keyframes cup3AroundDown {
+    0% {transform: rotate(0deg) translateX(0px) rotate(0deg) scale(1);}
+    50% {transform: rotate(90deg) translateX(255px) rotate(-90deg) scale(0.7);}
+    100% { transform: rotate(180deg) translateX(505px) rotate(-180deg) scale(1);}
+  }
+
+  ///////////////////////////////////////////////////////////////////////////////////
+
+  
+
+  

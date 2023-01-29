@@ -1,7 +1,7 @@
 
 # Game: El Trilero De Las Ramblas
 
-- El Trilero ("shell-game artist, or "Thimble-rig") is a typical Scam in las Ramblas de Barcelona for every tourist to enjoy... but sadly not anymore.
+- El Trilero ("shell-game" artist, or "Thimble-rig") is a typical Scam in las Ramblas de Barcelona for every tourist to enjoy... but sadly not anymore.
 
 - The changes in social environments due to COVID-19 issues, have put a end to this traditional practice of subsidiary cosmic justice. It is in the interest of tourists as well as of scam-artists not to risk their Health.
 

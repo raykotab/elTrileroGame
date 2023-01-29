@@ -4,15 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="./styles/main.css">
 
     <title>El Trilero De Las Ramblas</title>
-    
 </head>
 <body>
-
 <!-- <body onload="startGame()"> -->
-
   <section id="text">
     <h1>Meet Your Destiny <br> 
       with <br> 
@@ -20,28 +17,27 @@
     </h1>
   </section>    
 
-    
+  <section>
+    <div id="score">
+      <h3 style="color: green">Your Score</h3>
+    </div>
+    <div>
+      <button id="bet" style="position: absolute; right: -30%; top: -50% ">BET 50€</button>
+    </div>
+  </section>
+
   <section id="gamePlace">
     <div id="cups">
       <button id="cup1" class="cup"><img src="img/cupTrileroUpDown.png"></button>
       <button id="cup2" class="cup"><img src="img/cupTrileroUpDown.png"></button>
       <button id="cup3" class="cup"><img src="img/cupTrileroUpDown.png"></button>
     </div>
-      
-      <div id="littleBall" style="right: 24%;"></div>
-    
-    </section>
+    <div id="littleBall" style="right: 24%;"></div>
+  </section>
 
-    
-    
     <script type="module" src="js/game.js"></script>
     <script type="module" src="js/littleBall.js"></script>
     <script type="module" src="js/score.js"></script>
     <script type="module" src="js/cup.js"></script>
-
-
-
-
 </body>
-
 </html>
